@@ -12,7 +12,13 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+
+    
+    NSURL *url = [NSURL URLWithString:@"http://www.tomato-timer.com"];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    [[[self webView] mainFrame] loadRequest:urlRequest];
+     [self.window setContentView:self.webView];
+    
 }
 
 @end
